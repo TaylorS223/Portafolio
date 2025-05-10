@@ -5,4 +5,4 @@ Práctica realizada por Taylor Alava – Paralelo B (Aplicaciones Web)
 https://github.com/TaylorS223/Portafolio/new/main?filename=README.md
 
 🌐 Visualiza el proyecto en GitHub Pages
-https://taylors223.github.io/Portafolio/
+https://taylors223.github.io/Portafolio/Practica2/
