@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo Usar Videos en HTML</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkBg: "#1e1e2f",
+            darkCard: "#2c2c3e",
+            accentBlue: "#3b82f6",
+            textLight: "#f4f4f5",
+            textMuted: "#a1a1aa"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-darkBg text-textLight min-h-screen">
+  <!-- Header -->
+<header class="bg-darkCard shadow p-4 flex items-center justify-between">
+  <div class="flex items-center space-x-3">
+    <img src="../src/imagen.jpeg" alt="Logo o Usuario" class="w-10 h-10 rounded-full object-cover border-2 border-accentBlue" />
+    <h1 class="text-xl font-bold">Taylor Alava Gresely</h1>
+  </div>
+  <!-- Enlace para volver al menú principal -->
+  <div>
+    <a href="../index.html" class="bg-accentBlue text-white px-6 py-3 rounded-lg hover:bg-accentBlue/90">Volver al Menú Principal</a>
+  </div>
+</header>
+
+
+  <!-- Contenido principal -->
+  <main class="max-w-5xl mx-auto p-6">
+    <section class="bg-darkCard p-6 rounded-lg shadow mt-10">
+      <h2 class="text-3xl font-bold text-accentBlue mb-4">Cómo usar videos en HTML</h2>
+      <p class="text-textMuted mb-6">
+        HTML5 permite insertar videos directamente en tu página web utilizando la etiqueta <code class="bg-gray-700 text-white px-1 rounded">&lt;video&gt;</code>. A continuación se muestra cómo hacerlo correctamente:
+      </p>
+
+      <!-- Código de ejemplo -->
+      <div class="bg-gray-800 p-4 rounded mb-6 overflow-x-auto">
+        <pre class="text-sm text-white"><code>&lt;video width="640" height="360" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Tu navegador no soporta el elemento de video.
+&lt;/video&gt;</code></pre>
+      </div>
+
+      <!-- Video de ejemplo -->
+      <h3 class="text-xl font-semibold mb-2">Ejemplo en acción:</h3>
+      <video width="100%" height="auto" controls class="rounded shadow">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+
+      <!-- Explicación adicional -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold mb-2">Atributos comunes:</h3>
+        <ul class="list-disc list-inside text-textMuted space-y-1">
+          <li><strong>controls</strong>: muestra los controles de reproducción.</li>
+          <li><strong>autoplay</strong>: inicia el video automáticamente.</li>
+          <li><strong>loop</strong>: repite el video en bucle.</li>
+          <li><strong>muted</strong>: inicia el video sin sonido.</li>
+          <li><strong>poster</strong>: imagen de previsualización antes de que inicie el video.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="bg-darkCard text-textMuted px-6 py-8 mt-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <p class="text-sm mb-2 font-semibold text-textLight">© 2023 Dashboard Práctica Tailwind</p>
+          <p class="text-sm text-textMuted">Todos los derechos reservados.</p>
+        </div>
+        <div>
+          <p class="text-sm mb-2 font-semibold text-textLight">Contacto</p>
+          <p class="text-sm">Correo: <a href="mailto:stevenalava963@gmail.com" class="text-accentBlue hover:underline">stevenalava963@gmail.com</a></p>
+          <p class="text-sm">Teléfono: <a href="tel:+5939999999" class="text-accentBlue hover:underline">0999999999</a></p>
+        </div>
+        <div>
+          <p class="text-sm mb-2 font-semibold text-textLight">Ubicación</p>
+          <p class="text-sm">Cdla. Universitaria</p>
+          <p class="text-sm">Manta, Ecuador</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

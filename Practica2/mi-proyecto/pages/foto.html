@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo Usar Imágenes en HTML</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkBg: "#1e1e2f",
+            darkCard: "#2c2c3e",
+            accentBlue: "#3b82f6",
+            textLight: "#f4f4f5",
+            textMuted: "#a1a1aa"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-darkBg text-textLight min-h-screen">
+  <!-- Encabezado principal -->
+<header class="bg-darkCard shadow p-4 flex items-center justify-between">
+  <div class="flex items-center space-x-3">
+    <img src="../src/imagen.jpeg" alt="Logo o Usuario" class="w-10 h-10 rounded-full object-cover border-2 border-accentBlue" />
+    <h1 class="text-xl font-bold">Taylor Alava Gresely</h1>
+  </div>
+  <!-- Enlace para volver al menú principal -->
+  <div>
+    <a href="../index.html" class="bg-accentBlue text-white px-6 py-3 rounded-lg hover:bg-accentBlue/90">Volver al Menú Principal</a>
+  </div>
+</header>
+
+
+  <!-- Contenido principal -->
+  <main class="max-w-5xl mx-auto p-6">
+    <section class="bg-darkCard p-6 rounded-lg shadow mt-10">
+      <header class="mb-6">
+        <h2 class="text-3xl font-bold text-accentBlue">Cómo usar imágenes en HTML</h2>
+        <p class="text-textMuted mt-2">Aprende a integrar imágenes en tus páginas web con la etiqueta <code class="bg-gray-700 text-white px-1 rounded">&lt;img&gt;</code>.</p>
+      </header>
+
+      <article>
+        <h3 class="text-xl font-semibold mb-2">Código básico:</h3>
+        <div class="bg-gray-800 p-4 rounded mb-6 overflow-x-auto">
+          <pre class="text-sm text-white"><code>&lt;img src="foto.jpg" alt="Descripción de la imagen" width="600" /&gt;</code></pre>
+        </div>
+
+        <h3 class="text-xl font-semibold mb-2">Ejemplo visual:</h3>
+        <figure class="mb-6">
+          <img src="https://carreras.uleam.edu.ec/facultad-ciencias-de-la-vida-y-tecnologicas/wp-content/uploads/sites/73/2022/09/CABECERA-VIDA-2048x558.png" alt="Casa italiana" class="rounded shadow w-full max-w-md" />
+          <figcaption class="text-sm text-textMuted mt-2">Ejemplo de imagen usando la etiqueta <code>&lt;img&gt;</code>.</figcaption>
+        </figure>
+
+        <section>
+          <h3 class="text-xl font-semibold mb-2">Atributos comunes:</h3>
+          <ul class="list-disc list-inside text-textMuted space-y-1">
+            <li><strong>src</strong>: ruta o URL del archivo de imagen.</li>
+            <li><strong>alt</strong>: texto alternativo para accesibilidad y respaldo.</li>
+            <li><strong>width / height</strong>: define el tamaño en píxeles o porcentaje.</li>
+            <li><strong>title</strong>: muestra un texto emergente al pasar el cursor.</li>
+            <li><strong>loading</strong>: con valor <code>lazy</code> para carga diferida (mejora el rendimiento).</li>
+          </ul>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="bg-darkCard text-textMuted px-6 py-8 mt-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section>
+          <p class="text-sm mb-2 font-semibold text-textLight">© 2023 Dashboard Práctica Tailwind</p>
+          <p class="text-sm">Todos los derechos reservados.</p>
+        </section>
+        <section>
+          <p class="text-sm mb-2 font-semibold text-textLight">Contacto</p>
+          <p class="text-sm">Correo: <a href="mailto:stevenalava963@gmail.com" class="text-accentBlue hover:underline">stevenalava963@gmail.com</a></p>
+          <p class="text-sm">Teléfono: <a href="tel:+5939999999" class="text-accentBlue hover:underline">0999999999</a></p>
+        </section>
+        <section>
+          <p class="text-sm mb-2 font-semibold text-textLight">Ubicación</p>
+          <p class="text-sm">Cdla. Universitaria</p>
+          <p class="text-sm">Manta, Ecuador</p>
+        </section>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

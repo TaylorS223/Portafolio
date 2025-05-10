@@ -1,15 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard con Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkBg: "#1e1e2f",
+            darkCard: "#2c2c3e",
+            accentBlue: "#3b82f6",
+            accentGreen: "#10b981",
+            accentRed: "#ef4444",
+            textLight: "#f4f4f5",
+            textMuted: "#a1a1aa"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-darkBg text-textLight min-h-screen">
+  <header class="bg-darkCard shadow p-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <img src="./src/imagen.jpeg" alt="Logo o Usuario" class="w-10 h-10 rounded-full object-cover border-2 border-accentBlue" />
+      <h1 class="text-xl font-bold">Taylor Alava Gresely</h1>
+    </div>
+  </header>
+
+  <div class="flex">
+    <!-- Sidebar semántico -->
+    <nav class="w-64 h-screen bg-darkCard p-6 hidden md:block">
+      <h2 class="text-xl font-bold mb-4 text-accentBlue">Mi Dashboard</h2>
+      <ul class="space-y-2">
+        <li><a href="./pages/contacto.html" class="block px-2 py-1 hover:bg-darkBg rounded transition">Contacto</a></li>
+        <li><a href="./pages/foto.html" class="block px-2 py-1 hover:bg-darkBg rounded transition">Fotos</a></li>
+        <li><a href="./pages/video.html" class="block px-2 py-1 hover:bg-darkBg rounded transition">Videos</a></li>
+        <li><a href="./pages/formulario.html" class="block px-2 py-1 hover:bg-darkBg rounded transition">Formulario</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal existente -->
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 flex-1">
+      <!-- Columna principal (Contenido) -->
+      <div class="col-span-1 md:col-span-2">
+        <section class="container mx-auto mt-10">
+          <h1 class="text-3xl font-bold text-center text-accentBlue">Panel de Control</h1>
+          <p class="mt-4 text-center text-textMuted">Bienvenido al Dashboard de Taylor.</p>
+
+          <!-- Grid para tarjetas o widgets -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            <div class="bg-accentBlue p-6 text-white rounded-lg shadow-lg">
+              <h2 class="text-xl">Materias Cursando</h2>
+              <p class="text-2xl font-bold">5</p>
+            </div>
+            <div class="bg-accentGreen p-6 text-white rounded-lg shadow-lg">
+              <h2 class="text-xl">Semestre Actual</h2>
+              <p class="text-2xl font-bold">Cuarto Semestre</p>
+            </div>
+            <div class="bg-accentRed p-6 text-white rounded-lg shadow-lg">
+              <h2 class="text-xl">Tareas Pendientes</h2>
+              <p class="text-2xl font-bold">3</p>
+            </div>
+          </div>
+        </section>
+        <section class="mt-10">
+      <h2 class="text-2xl font-bold text-accentBlue">Calendario de Actividades</h2>
+      <div class="bg-darkCard p-4 rounded shadow mt-4">
+        <p>Próximo examen de Matemáticas: 20 de mayo.</p>
+        <p>Tarea de Programación: 15 de mayo.</p>
+      </div>
+    </section>
+
+      </div>
+
+      <!-- Columna secundaria (Artículos y info adicional) -->
+      <div class="col-span-1">
+        <!-- Artículo -->
+        <section>
+          <article class="bg-darkCard p-4 rounded shadow text-textMuted">
+            <p>"Si lo puedes imaginar, lo puedes programar"</p>
+            <p>Alejandro Taboada - Programación ATS</p>
+          </article>
+        </section>
+
+        <!-- Información adicional -->
+        <aside class="bg-darkCard p-4 mt-10 rounded shadow">
+          <h2 class="text-xl font-bold text-accentBlue">Información Adicional</h2>
+          <p class="mt-2 text-textMuted">Esta página fue hecha utilizando Node y Tailwind Vanilla TS.</p>
+        </aside>
+
+        <!-- Formulario de contacto -->
+        <form class="max-w-md mx-auto bg-darkCard p-6 rounded shadow mt-10">
+          <h2 class="text-xl font-bold mb-4 text-accentBlue">Contáctame</h2>
+          <label class="block mb-2 text-sm font-medium text-textMuted">Nombre</label>
+          <input type="text" class="w-full bg-darkBg border border-gray-600 p-2 rounded mb-4 text-white placeholder-gray-400" placeholder="Tu nombre" />
+          <label class="block mb-2 text-sm font-medium text-textMuted">Correo</label>
+          <input type="email" class="w-full bg-darkBg border border-gray-600 p-2 rounded mb-4 text-white placeholder-gray-400" placeholder="tu@email.com" />
+          <label class="block mb-2 text-sm font-medium text-textMuted">Mensaje</label>
+          <textarea class="w-full bg-darkBg border border-gray-600 p-2 rounded mb-4 text-white placeholder-gray-400" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+          <button type="submit" class="bg-accentBlue text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+<!-- Footer -->
+<footer>
+  <div class="bg-darkCard text-textMuted px-6 py-8 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <p class="text-sm mb-2 font-semibold text-textLight">© 2023 Dashboard Práctica Tailwind</p>
+        <p class="text-sm text-textMuted">Todos los derechos reservados.</p>
+      </div>
+      <div>
+        <p class="text-sm mb-2 font-semibold text-textLight">Contacto</p>
+        <p class="text-sm">Correo: <a href="mailto:stevenalava963@gmail.com" class="text-accentBlue hover:underline">stevenalava963@gmail.com</a></p>
+        <p class="text-sm">Teléfono: <a href="tel:+5939999999" class="text-accentBlue hover:underline">0999999999</a></p>
+      </div>
+      <div>
+        <p class="text-sm mb-2 font-semibold text-textLight">Ubicación</p>
+        <p class="text-sm">Cdla. Universitaria</p>
+        <p class="text-sm">Manta, Ecuador</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
 </html>
-
-

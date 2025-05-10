@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Contacto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkBg: "#1e1e2f",
+            darkCard: "#2c2c3e",
+            accentBlue: "#3b82f6",
+            textLight: "#f4f4f5",
+            textMuted: "#a1a1aa"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-darkBg text-textLight min-h-screen">
+  <!-- Encabezado principal -->
+  <header class="bg-darkCard shadow p-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <img src="../src/imagen.jpeg" alt="Logo o Usuario" class="w-10 h-10 rounded-full object-cover border-2 border-accentBlue" />
+      <h1 class="text-xl font-bold">Taylor Alava Gresely</h1>
+    </div>
+    <!-- Enlace para volver al menú principal -->
+    <div>
+        <a href="../index.html" class="bg-accentBlue text-white px-6 py-3 rounded-lg hover:bg-accentBlue/90">Volver al Menú Principal</a>
+    </div>
+  </header>
+
+
+  <!-- Contenido principal -->
+  <main class="max-w-5xl mx-auto p-6">
+    <section class="bg-darkCard p-6 rounded-lg shadow mt-10">
+      <header class="mb-6">
+        <h2 class="text-3xl font-bold text-accentBlue">Formulario de Contacto</h2>
+        <p class="text-textMuted mt-2">Llena el formulario a continuación para contactarme.</p>
+      </header>
+
+      <form action="#" method="POST">
+        <div class="mb-6">
+          <label for="nombre" class="block text-textLight mb-2">Tu Nombre:</label>
+          <input type="text" id="nombre" name="nombre" class="w-full p-3 rounded-lg bg-gray-800 text-white" placeholder="Escribe tu nombre" required />
+        </div>
+
+        <div class="mb-6">
+          <label for="correo" class="block text-textLight mb-2">Tu Correo:</label>
+          <input type="email" id="correo" name="correo" class="w-full p-3 rounded-lg bg-gray-800 text-white" placeholder="tu@email.com" required />
+        </div>
+
+        <div class="mb-6">
+          <label for="mensaje" class="block text-textLight mb-2">Tu Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" class="w-full p-3 rounded-lg bg-gray-800 text-white" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-accentBlue text-white py-3 rounded-lg hover:bg-accentBlue/90">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="bg-darkCard text-textMuted px-6 py-8 mt-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section>
+          <p class="text-sm mb-2 font-semibold text-textLight">© 2023 Dashboard Práctica Tailwind</p>
+          <p class="text-sm">Todos los derechos reservados.</p>
+        </section>
+        <section>
+          <p class="text-sm mb-2 font-semibold text-textLight">Contacto</p>
+          <p class="text-sm">Correo: <a href="mailto:stevenalava963@gmail.com" class="text-accentBlue hover:underline">stevenalava963@gmail.com</a></p>
+          <p class="text-sm">Teléfono: <a href="tel:+5939999999" class="text-accentBlue hover:underline">0999999999</a></p>
+        </section>
+        <section>
+          <p class="text-sm mb-2 font-semibold text-textLight">Ubicación</p>
+          <p class="text-sm">Cdla. Universitaria</p>
+          <p class="text-sm">Manta, Ecuador</p>
+        </section>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
