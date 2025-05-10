@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard con Tailwind</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <script>
     tailwind.config = {
       theme: {
@@ -33,7 +34,7 @@
   </header>
 
   <div class="flex">
-    <!-- Sidebar semántico -->
+    <!-- Sidebar -->
     <nav class="w-64 h-screen bg-darkCard p-6 hidden md:block">
       <h2 class="text-xl font-bold mb-4 text-accentBlue">Mi Dashboard</h2>
       <ul class="space-y-2">
@@ -68,13 +69,45 @@
             </div>
           </div>
         </section>
+
         <section class="mt-10">
-      <h2 class="text-2xl font-bold text-accentBlue">Calendario de Actividades</h2>
-      <div class="bg-darkCard p-4 rounded shadow mt-4">
-        <p>Próximo examen de Matemáticas: 20 de mayo.</p>
-        <p>Tarea de Programación: 15 de mayo.</p>
-      </div>
-    </section>
+          <h2 class="text-2xl font-bold text-accentBlue">Calendario de Actividades</h2>
+          <div class="bg-darkCard p-4 rounded shadow mt-4">
+            <p>Próximo examen de Matemáticas: 20 de mayo.</p>
+            <p>Tarea de Programación: 15 de mayo.</p>
+          </div>
+        </section>
+
+        <!-- Gráfico de Materias Cursando -->
+        <section class="mt-10">
+          <h2 class="text-2xl font-bold text-accentBlue">Gráfico de Materias Cursando</h2>
+          <div class="bg-darkCard p-6 rounded-lg shadow mt-4">
+            <div class="space-y-4">
+              <!-- Gráfico de barras para cada materia -->
+              <div class="flex items-center">
+                <span class="w-1/4 text-white">Estadistica</span>
+                <div class="w-3/4 bg-accentBlue h-6 rounded-full" style="width: 80%;"></div>
+              </div>
+              <div class="flex items-center">
+                <span class="w-1/4 text-white">Base de Datos</span>
+                <div class="w-3/4 bg-green-500 h-6 rounded-full" style="width: 60%;"></div>
+              </div>
+              <div class="flex items-center">
+                <span class="w-1/4 text-white">Aplicaciones Web</span>
+                <div class="w-3/4 bg-yellow-500 h-6 rounded-full" style="width: 90%;"></div>
+              </div>
+              <div class="flex items-center">
+                <span class="w-1/4 text-white">Administracion de Servidores</span>
+                <div class="w-3/4 bg-purple-500 h-6 rounded-full" style="width: 70%;"></div>
+              </div>
+              <div class="flex items-center">
+                <span class="w-1/4 text-white">Perspectiva de la IA</span>
+                <div class="w-3/4 bg-red-500 h-6 rounded-full" style="width: 50%;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
       </div>
 
