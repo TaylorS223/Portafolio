@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f2f5;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Contenedor general */
+.login-container,
+.productos-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  padding: 2.5rem 3rem;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74, 144, 226, 0.5);
+  outline: none;
+}
+
+input[type="file"] {
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+input[type="file"]:hover {
+  border-color: #4a90e2;
+}
+
+/* Botones */
+button {
+  background: #4a90e2;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background: #357ABD;
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.5);
+}
+
+/* Lista de productos */
+.producto-list {
+  margin-top: 2rem;
+}
+
+.producto-item {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.producto-info {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.producto-titulo {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.producto-descripcion {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.producto-precio {
+  font-weight: 700;
+  color: #4a90e2;
+}
+
+/* Botones de acción */
+.producto-acciones button {
+  background: #e3e7ed;
+  color: #333;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.producto-acciones button:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+/* Mensajes de error */
+.error {
+  color: #d93025;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container,
+  .productos-container {
+    padding: 2rem 1.5rem;
+  }
+}

@@ -7,7 +7,7 @@ Objetivo del proyecto:
 
   Hacer el fetch de forma limpia.
   Mostrar estado de carga (isLoading), error (error) y los datos.
-  Explicar cacheo automático y reintentos.
+  Explicar cacheo automático
 
 
 Requisitos:
@@ -19,18 +19,22 @@ React Query (@tanstack/react-query)
 API pública: https://jsonplaceholder.typicode.com/users
 
 Estructura:
+
 src/
 ├── main.tsx
-├── App.tsx
+├── api/
+│   └── obtener_usuario.ts
 ├── components/
 │   └── Users.tsx 
 ├── types/
-│   └── User.ts
+│   └── Usuario.ts
+├── App.tsx
+
 
 
 Arhivos que fueron modificados:
 ─ Users.tsx
+─ Usuario.ts
 ─ App.tsx
 ─ main.tsx
-─ users.ts
-─ User.ts
+─ obtener_usuario.ts

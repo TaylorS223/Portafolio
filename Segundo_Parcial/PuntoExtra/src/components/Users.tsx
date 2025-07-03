@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import { fetchUsers } from '../api/users'
-import type { User } from '../types/User'
+import { fetchUsers } from '../api/obtener_usuario'
+import type { Usuario } from '../types/Usuario'
 
 function Users() {
   const {
@@ -9,8 +9,8 @@ function Users() {
     error,
     refetch,
     dataUpdatedAt
-  } = useQuery<User[]>({
-    queryKey: ['users'],
+  } = useQuery<Usuario[]>({
+    queryKey: ['Usuario'],
     queryFn: fetchUsers,
   })
 
@@ -27,7 +27,7 @@ function Users() {
       <ul>
         {data?.map((u) => (
           <li key={u.login.uuid}>
-            {u.name.first} {u.name.last} — <em>{u.email}</em>
+            {u.credencial.nombre} {u.credencial.apellido} — <em>{u.email}</em>
           </li>
         ))}
       </ul>
