@@ -4,7 +4,7 @@ GRUPO:
 - Jordan Josue Lema Ayala
 - David Alejandro Vilañez Palma
 
-  # Entidad encargada
+  # Entidad encargada - Taylor Steven Alava Gresely
   Producto.ts
   # Componentes
   - src/components/ProductoList.tsx
@@ -13,4 +13,16 @@ GRUPO:
    - src/services/productoService.ts
   # Paginas
   - ProductosPage.tsx
+
+  # Entidad encargada - Jordan Josue Lema Ayala
+  Imagenp.ts
+  # Services
+   - src/services/SubidaImagenServices.ts
+
   
+  # Entidad encargada - David Alejandro Vilañez Palma
+  Cliente.ts
+  # Services
+   - src/services/ClienteService.ts
+  # Paginas
+  - login.tsx
