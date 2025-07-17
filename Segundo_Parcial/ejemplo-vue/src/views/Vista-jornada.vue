@@ -1,20 +1,20 @@
 //realizado por Taylor
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { IJornada } from '../types/jornada';
 import ContenedorJornada from '../components/taylor/ContenedorJornada.vue';
+import type { IJornada } from '../types/jornada';
 
 const jornadas = ref<IJornada[]>([
   {
     id: 1,
-    dia: 'Lunes',
+    dia: 'Lunes ',
     horaInicio: '08:00',
     horaFin: '12:00',
     descripcion: 'Turno matutino',
   },
   {
     id: 2,
-    dia: 'Martes',
+    dia: 'Martes ',
     horaInicio: '13:00',
     horaFin: '17:00',
     descripcion: 'Turno vespertino',

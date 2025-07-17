@@ -3,7 +3,7 @@
     <h3>{{ jornada.dia }} ({{ jornada.horaInicio }} - {{ jornada.horaFin }})</h3>
     <p>{{ jornada.descripcion }}</p>
     <div class="acciones-item">
-      <button class="boton boton-editar" @click="$emit('editar', jornada)">Editar</button>
+      <button class="boton boton-editar" @click="$emit('editar', jornada)"> Editar</button>
       <button class="boton boton-eliminar" @click="$emit('eliminar', jornada.id)">Eliminar</button>
     </div>
   </div>

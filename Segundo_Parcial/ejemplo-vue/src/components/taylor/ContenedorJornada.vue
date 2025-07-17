@@ -1,6 +1,6 @@
 <template>
   <div class="contenedor-modulo">
-    <h2 class="titulo-modulo">Gestión de Jornadas</h2>
+    <h2 class="titulo-modulo">Gestión de las Jornadas</h2>
 
     <JornadaForm :jornadaEditar="jornadaEditando" @guardar="guardarJornada" />
 

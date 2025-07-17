@@ -1,4 +1,4 @@
-//realizado por Taylor
+//archivo realizado por Taylor
 export interface IJornada {
   id: number;
   dia: string;
