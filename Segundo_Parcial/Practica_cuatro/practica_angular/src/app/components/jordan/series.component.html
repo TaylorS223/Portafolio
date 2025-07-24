@@ -1,0 +1,157 @@
+<div class="series-container">
+  <div class="header">
+    <h1>📺 Gestión de Series</h1>
+    <p class="subtitle">CRUD completo para administrar tu colección de series</p>
+  </div>
+
+  <div class="form-section">
+    <div class="form-card">
+      <h2>✏️ Editar Serie' : '➕ Agregar Nueva Serie</h2>
+      
+      <form (ngSubmit)="modoEdicion ? actualizarSerie() : agregarSerie()" #serieForm="ngForm">
+        <div class="form-group">
+          <label for="title">Título de la Serie:</label>
+          <input 
+            type="text" 
+            id="title" 
+            name="title"
+            [(ngModel)]="nuevaSerie.title"
+            placeholder="Ej: Breaking Bad"
+            required
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="urlImagen">URL de la Imagen (opcional):</label>
+          <input 
+            type="url" 
+            id="urlImagen" 
+            name="urlImagen"
+            [(ngModel)]="nuevaSerie.urlImagen"
+            placeholder="https://ejemplo.com/imagen_serie.jpg"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Sinopsis:</label>
+          <textarea 
+            id="description" 
+            name="description"
+            [(ngModel)]="nuevaSerie.description"
+            placeholder="Describe brevemente la trama de la serie..."
+            required
+            rows="4"
+            class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="genre">Género:</label>
+          <input 
+            type="text" 
+            id="genre" 
+            name="genre"
+            [(ngModel)]="nuevaSerie.genre"
+            placeholder="Ej: Drama, Ciencia Ficción"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="seasons">Temporadas:</label>
+          <input 
+            type="number" 
+            id="seasons" 
+            name="seasons"
+            [(ngModel)]="nuevaSerie.seasons"
+            placeholder="Ej: 5"
+            min="1"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="episodes">Episodios:</label>
+          <input 
+            type="number" 
+            id="episodes" 
+            name="episodes"
+            [(ngModel)]="nuevaSerie.episodes"
+            placeholder="Ej: 62"
+            min="1"
+            class="form-control">
+        </div>
+
+        <div class="form-actions">
+          <button 
+            type="submit" 
+            class="btn btn-primary"
+            [disabled]="!serieForm.form.valid">
+            💾 Actualizar : ➕ Agregar
+          </button>
+          
+          <button 
+            type="button" 
+            class="btn btn-secondary"
+            (click)="cancelarEdicion()"
+            *ngIf="modoEdicion">
+            ❌ Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="series-section">
+    <h2>📋 Lista de Series</h2>
+    
+    <div *ngIf="cargando" class="loading">
+      <div class="spinner"></div>
+      <p>Cargando series...</p>
+    </div>
+
+    <div *ngIf="!cargando && series.length === 0" class="empty-state">
+      <p>🎬 No hay series registradas</p>
+      <p>¡Agrega tu primera serie usando el formulario de arriba!</p>
+    </div>
+
+    <div *ngIf="!cargando && series.length > 0" class="series-grid">
+      <div 
+        *ngFor="let serie of series" 
+        class="serie-card"
+        [class.editing]="serieSeleccionada?.id === serie.id">
+        
+        <div class="serie-imagen">
+          <img 
+            [src]="serie.urlImagen || 'https://via.placeholder.com/300x450/000000/FFFFFF?text=Sin+Imagen'" 
+            [alt]="serie.title"
+            (error)="onImageError($event)">
+        </div>
+
+        <div class="serie-info">
+          <h3 class="serie-titulo">{{ serie.title }}</h3>
+          <p class="serie-description">{{ serie.description }}</p>
+          <p class="serie-details">
+            <strong>Género:</strong> {{ serie.genre }}<br>
+            <strong>Temporadas:</strong> {{ serie.seasons }}<br>
+            <strong>Episodios:</strong> {{ serie.episodes }}
+          </p>
+          <div class="serie-id">ID: {{ serie.id }}</div>
+        </div>
+
+        <div class="serie-actions">
+          <button 
+            class="btn btn-edit"
+            (click)="editarSerie(serie)"
+            title="Editar serie">
+            ✏️ Editar
+          </button>
+          
+          <button 
+            class="btn btn-delete"
+            (click)="eliminarSerie(serie.id)"
+            title="Eliminar serie">
+            🗑️ Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

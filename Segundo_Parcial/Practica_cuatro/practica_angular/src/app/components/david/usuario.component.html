@@ -1,0 +1,16 @@
+<h2> Gestion de usuarios</h2>
+
+<form [formGroup]="usuarioForm" (ngSubmit)="guardar()"> 
+    <input formControlName="nombre" placeholder="Nombre">
+    <input formControlName="correo" placeholder="Correo">
+    <input formControlName="fechaRegistro" type="date">
+    <button type="submit">{{ editando ? 'Actualizar' : 'Agregar' }}</button>
+</form>
+
+<ul>
+    <li *ngFor="let u of usuarios">
+        {{u.nombre}} - {{u.correo}} - {{u.fechaRegistro}}
+        <button (click)="editar(u)">Editar</button>
+        <button (click)="editar(u)">Eliminar</button>
+    </li>
+</ul>

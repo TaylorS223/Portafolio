@@ -1,0 +1,7 @@
+<h2>Catálogos</h2>
+<ul>
+  <li *ngFor="let c of catalogos">
+    <strong>{{ c.nombre }}</strong> - {{ c.descripcion }}
+    <button (click)="eliminar(c.id)">Eliminar</button>
+  </li>
+</ul>

@@ -1,0 +1,401 @@
+/* Estilos generales del contenedor */
+.series-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: #343a40;
+}
+
+/* Encabezados y subtítulos */
+.header, .form-section h2, .peliculas-section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 2.8em;
+  color: #0056b3; /* Un azul vibrante */
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #6c757d;
+  margin-top: -10px;
+}
+
+/* Secciones del componente */
+.form-section, .series-section, .info-section {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+/* Tarjeta de formulario */
+.form-card {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-card h2 {
+  font-size: 2em;
+  color: #343a40;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 15px;
+}
+
+/* Grupos de formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #495057;
+  font-size: 1em;
+}
+
+.form-control {
+  width: calc(100% - 20px); /* Ajuste para el padding */
+  padding: 12px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Acciones del formulario (botones) */
+.form-actions {
+  display: flex;
+  gap: 15px; /* Espacio entre botones */
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.05em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  flex-grow: 1; /* Permite que los botones se expandan */
+  max-width: 200px; /* Limita el ancho máximo */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover:not([disabled]) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover:not([disabled]) {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.2);
+}
+
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Mensajes de estado (carga, vacío) */
+.loading, .empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e9f7ef; /* Un verde claro suave */
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  color: #155724;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.loading .spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.empty-state {
+  background-color: #ffebee; /* Un rojo claro suave */
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+/* Grid de series */
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Columnas responsivas */
+  gap: 25px; /* Espacio entre las tarjetas */
+  margin-top: 20px;
+}
+
+/* Tarjeta de serie individual */
+.serie-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden; /* Para que la imagen se ajuste al borde redondeado */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Organiza contenido verticalmente */
+}
+
+.serie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.serie-card.editing {
+  border: 3px solid #007bff; /* Borde para la serie que se está editando */
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+.serie-imagen {
+  width: 100%;
+  height: 200px; /* Altura fija para las imágenes */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9ecef; /* Color de fondo si la imagen no carga */
+}
+
+.serie-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta la imagen para que llene el contenedor */
+  display: block;
+}
+
+.serie-info {
+  padding: 15px;
+  flex-grow: 1; /* Permite que la información ocupe el espacio restante */
+}
+
+.serie-titulo {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #343a40;
+  line-height: 1.3;
+}
+
+.serie-description, .serie-details {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.serie-details strong {
+  color: #343a40;
+}
+
+.serie-id {
+  font-size: 0.8em;
+  color: #888;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Acciones de la tarjeta (botones) */
+.serie-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  border-top: 1px solid #e9ecef;
+  background-color: #f1f3f5;
+}
+
+.btn-edit, .btn-delete {
+  padding: 8px 15px;
+  font-size: 0.9em;
+  font-weight: 600;
+  border-radius: 5px;
+  flex-basis: 48%; /* Para que los botones se distribuyan */
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #343a40;
+}
+
+.btn-edit:hover {
+  background-color: #e0a800;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+/* Información adicional del proyecto */
+.info-section .info-card {
+  text-align: center;
+  padding: 25px;
+  background-color: #e0f2f7; /* Un azul claro muy suave */
+  border: 1px solid #b3e0ed;
+  border-radius: 8px;
+  color: #004085;
+}
+
+.info-section h3 {
+  color: #0056b3;
+  margin-bottom: 15px;
+}
+
+.info-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-section li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
+}
+
+.info-section strong {
+  color: #0056b3;
+}
+
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 992px) {
+  .series-container {
+    padding: 15px;
+    margin: 15px auto;
+  }
+  .header h1 {
+    font-size: 2.2em;
+  }
+  .form-card h2 {
+    font-size: 1.8em;
+  }
+  .series-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .serie-imagen {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .series-container {
+    padding: 10px;
+    margin: 10px;
+  }
+  .header h1 {
+    font-size: 2em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+  .form-section, .series-section, .info-section {
+    padding: 20px;
+  }
+  .form-card h2 {
+    font-size: 1.6em;
+  }
+  .btn {
+    font-size: 1em;
+    padding: 10px 20px;
+    max-width: none; /* Elimina el max-width en pantallas pequeñas */
+  }
+  .form-actions {
+    flex-direction: column; /* Apila los botones en pantallas pequeñas */
+    gap: 10px;
+  }
+  .series-grid {
+    grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    gap: 15px;
+  }
+  .serie-imagen {
+    height: 220px; /* Un poco más de altura en móvil para que se vea mejor */
+  }
+  .serie-card {
+    flex-direction: column; /* Asegura que la tarjeta se apile verticalmente */
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8em;
+  }
+  .subtitle {
+    font-size: 0.9em;
+  }
+  .form-card h2 {
+    font-size: 1.4em;
+  }
+  .form-group label {
+    font-size: 0.9em;
+  }
+  .form-control {
+    font-size: 0.9em;
+    padding: 10px 8px;
+  }
+  .serie-titulo {
+    font-size: 1.3em;
+  }
+  .serie-description, .serie-details, .serie-id {
+    font-size: 0.85em;
+  }
+  .btn-edit, .btn-delete {
+    font-size: 0.8em;
+    padding: 6px 10px;
+  }
+}
