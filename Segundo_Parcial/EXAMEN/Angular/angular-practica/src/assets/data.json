@@ -1,0 +1,92 @@
+{
+  "agenda": [
+    {
+      "id": "ag1",
+      "IJornada": {
+        "id": "j1",
+        "horario": "Mañana"
+      }
+    },
+    {
+      "id": "ag2",
+      "IJornada": {
+        "id": "j2",
+        "horario": "Tarde"
+      }
+    }
+  ],
+  "metodos": [
+    {
+      "id": "m1",
+      "tarjeta": "Visa",
+      "numero_tarjeta": "4111111111111111"
+    },
+    {
+      "id": "m2",
+      "tarjeta": "MasterCard",
+      "numero_tarjeta": "5500000000000004"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "u1",
+      "nombre": "Juan Pérez",
+      "correo": "juan.perez@example.com"
+    },
+    {
+      "id": "u2",
+      "nombre": "Ana Gómez",
+      "correo": "ana.gomez@example.com"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "c1",
+      "nombre": "Carlos",
+      "apellido": "Ramírez",
+      "correo": "carlos.ramirez@example.com",
+      "telefono": "+593987654321"
+    },
+    {
+      "id": "c2",
+      "nombre": "Lucía",
+      "apellido": "Fernández",
+      "correo": "lucia.fernandez@example.com",
+      "telefono": "+593912345678"
+    }
+  ],
+  "jornadas": [
+    {
+      "id": "j1",
+      "horario": "Mañana"
+    },
+    {
+      "id": "j2",
+      "horario": "Tarde"
+    }
+  ],
+  "tareas": [
+    {
+      "id": "t1",
+      "usuarioId": "u1",
+      "nombre": "Revisión de agenda",
+      "horaInicio": "08:00",
+      "horaFin": "10:00",
+      "IJornada": {
+        "id": "j1",
+        "horario": "Mañana"
+      }
+    },
+    {
+      "id": "t2",
+      "usuarioId": "u2",
+      "nombre": "Planificación diaria",
+      "horaInicio": "14:00",
+      "horaFin": "16:00",
+      "IJornada": {
+        "id": "j2",
+        "horario": "Tarde"
+      }
+    }
+  ]
+}
