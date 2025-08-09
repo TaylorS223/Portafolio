@@ -1,0 +1,33 @@
+<button (click)="sincronizar()"> Sincronizar datos</button>
+
+<form>
+    <input type="text" [(ngModel)]="user._id" name="_id" placeholder="ID">
+    <input type="text" [(ngModel)]="user.name" name="name" placeholder="Nombre">
+    <input type="text" [(ngModel)]="user.email" name="email" placeholder="Email">
+    <button (click)="new()"> Nuevo</button>
+    <button (click)="save()"> Guardar</button>
+    <button (click)="list()"> Listar</button>
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+    </tr>
+
+    @for (user of users; track $index){
+    <tr>
+        <td>{{user._id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+
+        <td>
+            <button (click)="edit(user)">Editar</button>
+            <button (click)="delete(user)">Eliminar</button>
+        </td>
+
+    </tr>
+    }
+</table>

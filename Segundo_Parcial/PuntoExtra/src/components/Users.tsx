@@ -27,7 +27,7 @@ function Users() {
       <ul>
         {data?.map((u) => (
           <li key={u.login.uuid}>
-            {u.credencial.nombre} {u.credencial.apellido} — <em>{u.email}</em>
+            {u.name.first} {u.name.last} — <em>{u.email}</em>
           </li>
         ))}
       </ul>

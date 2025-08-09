@@ -2,11 +2,10 @@ export interface Usuario {
   login: {
     uuid: string
   }
-  credencial: {
-    nombre: string
-    apellido: string
+  name: {
+    first: string
+    last: string
   }
   email: string
 }
-
 

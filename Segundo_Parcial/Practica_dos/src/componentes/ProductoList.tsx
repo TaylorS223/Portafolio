@@ -1,5 +1,5 @@
 // src/componentes/ProductoList.tsx
-// Código creado por taylor steven alava gresely
+// Código creado por Taylor Steven Alava Gresely
 import type { Producto } from '../entidades/Producto';
 
 interface Imagen {

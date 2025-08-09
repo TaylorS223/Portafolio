@@ -1,7 +1,6 @@
 // === Componente creado por Taylor Alava ===
 // === Encargado de la entidad Icatalogo ===
 
-
 interface Icatalogo{
     id: number;
     nombre: string;
